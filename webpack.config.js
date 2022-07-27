@@ -5,6 +5,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   mode: 'development',
@@ -35,6 +36,12 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
       publicPath: '/dist',
+    },
+    proxy: {
+      '/api/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
     },
   },
   resolve: {

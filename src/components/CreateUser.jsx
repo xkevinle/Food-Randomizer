@@ -32,6 +32,7 @@ function CreateUser() {
       lastName,
       favFoods: foods,
     };
+
     fetch('/api/user', {
       method: 'POST',
       headers: {
@@ -40,9 +41,6 @@ function CreateUser() {
       body: JSON.stringify(body),
     })
       .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-      })
       .catch((err) => console.log('CreateUser fetch /api/user: ERROR: ', err));
   };
 
@@ -88,9 +86,15 @@ function CreateUser() {
               </label>
             </ul>
             <ul>
-              <label htmlFor="burgers">
+              <label htmlFor="tacos">
                 <input type="checkbox" name="tacos" value="Tacos" onChange={handleFoodsCheck} />
                 Tacos
+              </label>
+            </ul>
+            <ul>
+              <label htmlFor="tacos">
+                <input type="checkbox" name="wings" value="Wings" onChange={handleFoodsCheck} />
+                Wings
               </label>
             </ul>
           </div>

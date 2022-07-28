@@ -46,9 +46,16 @@ h1 {
 
 button {
   color: black;
+  background-color: rgb(248, 248, 248);
+  border: 1px solid black;
+}
+
+.btn-home-users {
+  margin-left: 0.3rem;
 }
 
 .userBtn {
+  margin-top: 0.4rem;
   margin-left: 10rem;
   height: 2rem;
   color: black
@@ -61,6 +68,44 @@ button {
 .foodBox {
   height: 5rem;
 }
+
 .food {
   margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.randomBoxContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.randomBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1000px;
+  height: 10rem;
+}
+
+.randomBtn {
+  width: 7rem;
+}
+
+.random-txt {
+  margin-top: 1rem;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+  max-width: 100rem;
+}
+
+.img {
+  margin: 2rem;
+  width: 22rem;
 }

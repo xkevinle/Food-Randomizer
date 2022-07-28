@@ -4,16 +4,15 @@ const controller = {
   createUser: async (req, res, next) => {
     try {
       const { firstName, lastName, favFoods } = req.body;
-      if (!firstName || !lastName || !favFoods) {
+      if (!firstName || !favFoods) {
         return next({
           log: 'controller.createUser: ERROR: missing input(s)',
           message: { err: 'Missing input(s)' },
         });
       }
-      res.locals.newUser = await User.create({
+      await User.create({
         firstName, lastName, favFoods,
       });
-      console.log(res.locals.newUser);
       return next();
     } catch (err) {
       return next({
@@ -29,6 +28,18 @@ const controller = {
     } catch (err) {
       return next({
         log: `controller.getUsers: ERROR: ${err}`,
+        message: { err: 'Invalid database query' },
+      });
+    }
+  },
+  deleteUser: async (req, res, next) => {
+    try {
+      const { _id } = req.params;
+      await User.deleteOne({ _id });
+      return next();
+    } catch (err) {
+      return next({
+        log: `controller.deleteUser: ERROR: ${err}`,
         message: { err: 'Invalid database query' },
       });
     }

@@ -30,6 +30,7 @@ h1 {
 .favFoodBox {
   margin-top: 1rem;
 }
+
 .userBox {
   display: flex;
   margin: 1rem;
@@ -54,11 +55,8 @@ button {
   margin-left: 0.3rem;
 }
 
-.userBtn {
-  margin-top: 0.4rem;
-  margin-left: 10rem;
-  height: 2rem;
-  color: black
+.btn-home-update {
+  margin-left: 0.3rem;
 }
 
 .createBtn {
@@ -66,12 +64,31 @@ button {
 }
 
 .foodBox {
-  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 4rem;
 }
 
 .food {
-  margin-left: 2rem;
-  margin-top: 0.5rem;
+  padding: 0.2rem;
+}
+
+.userInfo {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0rem 3.5rem 2.5rem;
+}
+
+h4 {
+  margin-top: 0;
+}
+
+.deleteBtn{
+  height: 1.5rem;
+  color: black;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
 }
 
 .randomBoxContainer {
@@ -108,4 +125,29 @@ button {
 .img {
   margin: 2rem;
   width: 22rem;
+}
+
+.usersList {
+  color: black;
+}
+
+.usersOptions {
+  color: black;
+}
+
+.updateBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.updateUser {
+  padding: 2rem;
+  border: 1px solid rgb(248, 248, 248);
+  min-width: 10rem;
+}
+
+.selectText {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }

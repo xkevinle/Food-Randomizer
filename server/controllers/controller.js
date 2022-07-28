@@ -44,6 +44,20 @@ const controller = {
       });
     }
   },
+  updateUser: async (req, res, next) => {
+    try {
+      const { _id } = req.params;
+      const { favFoods } = req.body;
+
+      await User.findOneAndUpdate({ _id }, { favFoods });
+      return next();
+    } catch (err) {
+      return next({
+        log: `controller.deleteUser: ERROR: ${err}`,
+        message: { err: 'Invalid database query' },
+      });
+    }
+  },
 };
 
 module.exports = controller;

@@ -79,7 +79,7 @@ function Users() {
         <div className="userContainer">
           {users.map((e) => (
             <article key={e._id} className="userBox">
-              <ul>
+              <ul className="userInfo">
                 <h4>
                   {' '}
                   {`${e.firstName} ${e.lastName}`}
@@ -87,10 +87,7 @@ function Users() {
                 <div className="foodBox">
                   {e.favFoods.map((f) => <li key={f.toString()} className="food">{f}</li>)}
                 </div>
-                <Link to="/update">
-                  <button className="userBtn" type="button">Update food</button>
-                </Link>
-                <button className="userBtn" id="deleteBtn" type="button" value={e._id} onClick={deleteUser}>Delete User</button>
+                <button className="deleteBtn" type="button" value={e._id} onClick={deleteUser}>Delete User</button>
               </ul>
             </article>
           )) }

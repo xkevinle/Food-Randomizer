@@ -9,4 +9,6 @@ router.post('/user', controller.createUser, (req, res) => res.status(200).json('
 
 router.delete('/:_id', controller.deleteUser, (req, res) => res.status(200).json('User deleted'));
 
+router.patch('/:_id', controller.updateUser, (req, res) => res.status(200).json('User updated'));
+
 module.exports = router;

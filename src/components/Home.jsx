@@ -13,6 +13,7 @@ function Home() {
     <div>
       <Link to="/create"><button className="btn-home-create" type="button">Create User</button></Link>
       <Link to="/users"><button className="btn-home-users" type="button">Users</button></Link>
+      <Link to="/update"><button className="btn-home-update" type="button">Update Users</button></Link>
       <div className="imgContainer">
         <img className="img" alt="" src={burgerImg} />
         <img className="img" alt="" src={pizzaImg} />

@@ -32,14 +32,17 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: '8080',
+    host: 'localhost',
+    port: '8081',
     static: {
       directory: path.join(__dirname, 'dist'),
-      publicPath: '/dist',
+      publicPath: '/',
     },
+    hot: true,
+    historyApiFallback: true,
     proxy: {
       '/api/**': {
-        target: 'http://localhost:3000/',
+        target: 'http://localhost:3001/',
         secure: false,
       },
     },

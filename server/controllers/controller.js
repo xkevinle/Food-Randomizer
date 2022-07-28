@@ -4,9 +4,16 @@ const controller = {
   createUser: async (req, res, next) => {
     try {
       const { firstName, lastName, favFoods } = req.body;
+      if (!firstName || !lastName || !favFoods) {
+        return next({
+          log: 'controller.createUser: ERROR: missing input(s)',
+          message: { err: 'Missing input(s)' },
+        });
+      }
       res.locals.newUser = await User.create({
         firstName, lastName, favFoods,
       });
+      console.log(res.locals.newUser);
       return next();
     } catch (err) {
       return next({

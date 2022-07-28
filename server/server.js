@@ -3,7 +3,7 @@ const express = require('express');
 const apiRouter = require('./routes/api');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(express.json());
 
@@ -11,7 +11,8 @@ app.use('/api', apiRouter);
 
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
 
-app.use((err, req, res) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 500,

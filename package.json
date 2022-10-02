@@ -5,7 +5,7 @@
   "main": "App.jsx",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "concurrently \"webpack serve\" \"nodemon server/server.js\"",
+    "serve": "concurrently \"webpack serve --mode=development\" \"nodemon server/server.js\"",
     "build": "webpack",
     "test": "jest"
   },
